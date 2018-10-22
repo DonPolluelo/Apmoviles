@@ -20,7 +20,7 @@ public class MenuCarrerasActivity extends AppCompatActivity {
 
         ListView lv = (ListView) findViewById(R.id.carreras_listview);
 
-
+        //wena choro Anubis
 
 
     }
