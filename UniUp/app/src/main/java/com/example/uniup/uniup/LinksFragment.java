@@ -37,7 +37,15 @@ public class LinksFragment extends Fragment implements AdapterView.OnItemClickLi
         view = inflater.inflate(R.layout.links_fragment, container, false);
 
         ListView lv = (ListView) view.findViewById(R.id.mylistview);
-        loadData();
+
+
+
+
+        String university = getArguments().getString("uni");
+
+
+
+        loadData(university);
         adapter = new ArrayAdapter(getActivity(), R.layout.list_item, pages);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
@@ -60,24 +68,55 @@ public class LinksFragment extends Fragment implements AdapterView.OnItemClickLi
     }
 
 
-    private void loadData() {
+    private void loadData(String university) {
         SharedPreferences sp = getActivity().getPreferences(MODE_PRIVATE);
-        String pagesList = sp.getString("pages",
-                "Moodle;SIGA;Aula;RREE;CIME");
 
-        String linksList = sp.getString("links",
-                "https://moodle.inf.utfsm.cl/;https://www.siga.usm.cl;https://aula.usm.cl;https://www.rree.usm.cl;http://www.cime.cl");
 
-        pages.clear();
-        links.clear();
 
-        for (String page : pagesList.split(";")) {
-            pages.add(page);
+        if (university.equals("usm")) {
+            String pagesList = sp.getString("pages",
+                    "Moodle;SIGA;Aula;Relaciones Estudiantiles;CIME;Minuta;SIREB;Gimnasio;MINEDUC;JUNAEB;SODEXO;Becas y Créditos");
+
+            String linksList = sp.getString("links",
+                    "https://moodle.inf.utfsm.cl/;https://www.siga.usm.cl;https://aula.usm.cl;https://www.rree.usm.cl;http://www.cime.cl;" +
+                            "https://www.usm.cl/comunidad/servicio-de-alimentacion/;https://sireb.usm.cl/;https://siga.usm.cl/gim/;" +
+                            "https://www.mineduc.cl/;https://www.junaeb.cl/;http://www.becajunaebsodexo.cl/;http://portal.beneficiosestudiantiles.cl/");
+
+
+            pages.clear();
+            links.clear();
+
+            for (String page : pagesList.split(";")) {
+                pages.add(page);
+            }
+
+            for (String link : linksList.split(";")) {
+                links.add(link);
+            }
         }
 
-        for (String link : linksList.split(";")) {
-            links.add(link);
+
+        if (university.equals("pucv")) {
+            String pagesList = sp.getString("pages",
+                    "Nave13;MINEDUC;JUNAEB;SODEXO;Becas y Créditos");
+
+            String linksList = sp.getString("links",
+                    "https://nave13.ucv.cl/" +
+                            "https://www.mineduc.cl/;https://www.junaeb.cl/;http://www.becajunaebsodexo.cl/;http://portal.beneficiosestudiantiles.cl/");
+
+
+            pages.clear();
+            links.clear();
+
+            for (String page : pagesList.split(";")) {
+                pages.add(page);
+            }
+
+            for (String link : linksList.split(";")) {
+                links.add(link);
+            }
         }
+
     }
 
 
