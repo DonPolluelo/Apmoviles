@@ -49,7 +49,6 @@ public class RamoDB {
 
         Ramo ramo;
         ArrayList<Ramo> listaRamos = new ArrayList<>();
-        ArrayList<String> infoRamos = new ArrayList<>();
 
         Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_RAMO,null);
 
@@ -64,12 +63,7 @@ public class RamoDB {
         }
         this.closeDB();
 
-        for  (int i = 0; i<listaRamos.size();i++) {
-            Log.i(TAG,listaRamos.get(i).getName());
-            infoRamos.add(listaRamos.get(i).getName());
-        }
-        Log.i(TAG,infoRamos.toString());
-        return infoRamos;
+        return listaRamos;
     }
 
 

@@ -1,7 +1,9 @@
 package com.example.uniup.uniup.models;
 
 
-public class Ramo {
+import java.io.Serializable;
+
+public class Ramo implements Serializable {
     private int id;
     private String name;
 
