@@ -44,28 +44,35 @@ public class RamoDB {
         return rowID;
     }
 
-    public ArrayList loadClientes() {
-
-        ArrayList list = new ArrayList<>();
-
+    public ArrayList consultarListaRamos() {
         this.openReadableDB();
-        String[] campos = new String[]{ConstantsDB.RAMO_ID, ConstantsDB.RAMO_NOMBRE};
-        Cursor c = db.query(ConstantsDB.TABLA_RAMO, campos, null, null, null, null, null);
 
-        try {
-            while (c.moveToNext()) {
-                Ramo ramo = new Ramo();
-                ramo.setId(c.getInt(0));
-                ramo.setName(c.getString(1));
-                list.add(ramo);
-            }
-        } finally {
-            c.close();
+        Ramo ramo;
+        ArrayList<Ramo> listaRamos = new ArrayList<>();
+        ArrayList<String> infoRamos = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_RAMO,null);
+
+        while (cursor.moveToNext()){
+            ramo = new Ramo();
+            ramo.setId(cursor.getInt(0));
+            ramo.setName(cursor.getString(1));
+
+
+
+            listaRamos.add(ramo);
         }
         this.closeDB();
 
-        return list;
+        for  (int i = 0; i<listaRamos.size();i++) {
+            Log.i(TAG,listaRamos.get(i).getName());
+            infoRamos.add(listaRamos.get(i).getName());
+        }
+        Log.i(TAG,infoRamos.toString());
+        return infoRamos;
     }
+
+
 
     private ContentValues clienteMapperContentValues(Ramo ramo) {
         ContentValues cv = new ContentValues();
