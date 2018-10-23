@@ -5,22 +5,30 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.uniup.uniup.HorarioFragment;
-import com.example.uniup.uniup.LinksFragment;
-import com.example.uniup.uniup.MallaFragment;
-import com.example.uniup.uniup.R;
-import com.example.uniup.uniup.SemestreFragment;
-import com.example.uniup.uniup.ViewPagerAdapter;
+import com.example.uniup.uniup.db.RamoDB;
+import com.example.uniup.uniup.models.Ramo;
 
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewpager;
+    private RamoDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = new RamoDB(this);
+
+        Ramo ramo1 = new Ramo("Mate");
+        Ramo ramo2 = new Ramo("Fisica");
+        Ramo ramo3 = new Ramo("Quimica");
+        Ramo ramo4 = new Ramo("Progra");
+
+        db.insertRamo(ramo1);
+        db.insertRamo(ramo2);
+        db.insertRamo(ramo3);
+        db.insertRamo(ramo4);
 
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
@@ -32,6 +40,5 @@ public class MainActivity extends AppCompatActivity {
 
         viewpager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewpager);
-
     }
 }

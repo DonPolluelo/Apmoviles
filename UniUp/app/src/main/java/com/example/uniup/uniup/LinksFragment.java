@@ -21,9 +21,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class LinksFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    List pages= new ArrayList();
-    List links= new ArrayList();
-    ArrayAdapter adapter;
+    private List pages= new ArrayList();
+    private List links= new ArrayList();
+    private ArrayAdapter adapter;
 
 
     public LinksFragment() {
