@@ -25,11 +25,11 @@ public class SemestreFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.semestre_fragment, container, false);
-        //db = new RamoDB(getActivity());
+        db = new RamoDB(getActivity());
 
-        //ListView lv = (ListView) view.findViewById(R.id.mylistview);
-        //ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.list_item, db.consultarListaRamos());
-        //lv.setAdapter(adapter);
+        ListView lv = (ListView) view.findViewById(R.id.mylistview);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.list_item, db.consultarListaRamos());
+        lv.setAdapter(adapter);
 
         return view;
     }
