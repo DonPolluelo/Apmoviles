@@ -1,5 +1,6 @@
 package com.example.uniup.uniup;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -30,13 +31,25 @@ public class MainActivity extends AppCompatActivity {
         db.insertRamo(ramo3);
         db.insertRamo(ramo4);
 
+
+        Intent intent = getIntent();
+        String university = intent.getStringExtra("uni");
+
+        Bundle bundle = new Bundle();
+        bundle.putString("uni", university);
+        LinksFragment fragobj = new LinksFragment();
+        fragobj.setArguments(bundle);
+
+
+
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.AddFragment(new HorarioFragment(), "Horario");
         adapter.AddFragment(new MallaFragment(), "Malla");
         adapter.AddFragment(new SemestreFragment(), "Semestre");
-        adapter.AddFragment(new LinksFragment(), "Links");
+        //adapter.AddFragment(new LinksFragment(), "Links");
+        adapter.AddFragment(fragobj, "Links");
 
         viewpager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewpager);
