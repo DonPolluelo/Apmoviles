@@ -101,7 +101,7 @@ public class LinksFragment extends Fragment implements AdapterView.OnItemClickLi
                     "Nave13;MINEDUC;JUNAEB;SODEXO;Becas y Créditos");
 
             String linksList = sp.getString("links",
-                    "https://nave13.ucv.cl/" +
+                    "https://nave13.ucv.cl/;" +
                             "https://www.mineduc.cl/;https://www.junaeb.cl/;http://www.becajunaebsodexo.cl/;http://portal.beneficiosestudiantiles.cl/");
 
 
