@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimaryDark"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -37,9 +37,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="?android:attr/colorActivatedHighlight"
+            android:background="@color/colorAccent"
             android:onClick="agregarRamo"
             android:text="Agregar"
+            android:textColor="@android:color/background_light"
             android:textSize="24sp" />
     </LinearLayout>
 

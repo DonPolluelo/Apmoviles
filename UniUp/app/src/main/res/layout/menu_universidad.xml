@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Seleccione Universidad"
+            android:text="Seleccione su Universidad:"
             android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
 
@@ -36,7 +36,7 @@
 
         <ImageButton
             android:id="@+id/usmbutton_id"
-            android:layout_width="177dp"
+            android:layout_width="247dp"
             android:layout_height="167dp"
             android:layout_weight="1"
             android:background="@drawable/usm"
@@ -45,8 +45,8 @@
 
         <ImageButton
             android:id="@+id/pucvbutton_id"
-            android:layout_width="166dp"
-            android:layout_height="173dp"
+            android:layout_width="wrap_content"
+            android:layout_height="167dp"
             android:layout_weight="3"
             android:background="@drawable/pucv"
             android:gravity="center" />
