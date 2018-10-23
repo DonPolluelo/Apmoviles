@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a3721d9-83a0-43d7-b20c-3d2b9311384d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/UniUp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/androidTest/java/com/example/uniup/uniup/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/HorarioFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/LinksFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/MallaFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/MenuCarrerasActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/ViewPagerAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/java/com/example/uniup/uniup/db/ConstantsDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/drawable/pucv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/drawable/usm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/app_bar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/horario_fragment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/links_fragment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/list_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/malla_fragment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/layout/menu_carrera.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/menu/menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/app/src/test/java/com/example/uniup/uniup/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniUp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/androidTest/java/com/example/ishnu/preferencias/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/java/com/example/ishnu/preferencias/AppCompatPreferenceActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/java/com/example/ishnu/preferencias/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/java/com/example/ishnu/preferencias/SettingsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/drawable/ic_info_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/drawable/ic_notifications_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/drawable/ic_sync_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/layout/app_bar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/menu/menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/xml/pref_data_sync.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/xml/pref_general.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/xml/pref_headers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/main/res/xml/pref_notification.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/app/src/test/java/com/example/ishnu/preferencias/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferencias/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-journal" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="53" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Apmoviles-master/UniUp" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a3721d9-83a0-43d7-b20c-3d2b9311384d" name="Default" comment="" />
+      <created>1540273287928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540273287928</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Captures" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>
