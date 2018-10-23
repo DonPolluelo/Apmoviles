@@ -23,7 +23,7 @@
             android:layout_height="240dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Seleccione su Universidad:"
+            android:text="@string/selecciona"
             android:textColor="@color/colorPrimary"
             android:textSize="36sp" />
 

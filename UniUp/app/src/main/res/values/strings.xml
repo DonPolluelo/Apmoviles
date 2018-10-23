@@ -4,4 +4,15 @@
     <string name="carrera_name">Editar Mi Carrera</string>
     <string name="horario_name">Editar Mi Horario</string>
     <string name="semestre_name">Editar Mi Semestre</string>
+    <string name="proximo">Próximamente!</string>
+    <string name="horario">Horario</string>
+    <string name="malla">Malla</string>
+    <string name="semestre">Semestre</string>
+    <string name="selecciona">Selecciona tu Universidad:</string>
+    <string name="ingresa_nombre_del_ramo">Ingresa el Nombre del Ramo:</string>
+    <string name="nombre_ramo">Nombre del Ramo</string>
+    <string name="agregar_boton">Agregar</string>
+
+
+
 </resources>

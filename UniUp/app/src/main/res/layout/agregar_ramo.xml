@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_marginTop="50dp"
-        android:text="Ingresa el Nombre del Ramo:"
+        android:text="@string/ingresa_nombre_del_ramo"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="?attr/colorBackgroundFloating"
-            android:hint="Nombre Ramo"
+            android:hint="@string/nombre_ramo"
             android:padding="10dp"
             android:singleLine="false"
             android:textAlignment="center"
@@ -40,7 +40,7 @@
             android:layout_margin="20dp"
             android:background="@color/colorAccent"
             android:onClick="agregarRamo"
-            android:text="Agregar"
+            android:text="@string/agregar_boton"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />
     </LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UniUP!</string>
+    <string name="universidad_name">Edit My University</string>
+    <string name="carrera_name">Edit My Career</string>
+    <string name="horario_name">Edit My Schedule</string>
+    <string name="semestre_name">Edit My Semester</string>
+    <string name="proximo">Coming Soon!</string>
+    <string name="horario">Schedule</string>
+    <string name="malla">Subjects</string>
+    <string name="semestre">Semester</string>
+    <string name="selecciona">Select your University:</string>
+    <string name="ingresa_nombre_del_ramo">Write down the subjects name:</string>
+    <string name="nombre_ramo">Subjects Name</string>
+    <string name="agregar_boton">Add</string>
+
+</resources>

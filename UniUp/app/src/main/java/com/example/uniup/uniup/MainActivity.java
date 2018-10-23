@@ -32,14 +32,16 @@ public class MainActivity extends AppCompatActivity {
         LinksFragment fragobj = new LinksFragment();
         fragobj.setArguments(bundle);
 
-
+        String horario = getResources().getString(R.string.horario);
+        String malla = getResources().getString(R.string.malla);
+        String semestre = getResources().getString(R.string.semestre);
 
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new HorarioFragment(), "Horario");
-        adapter.AddFragment(new MallaFragment(), "Malla");
-        adapter.AddFragment(new SemestreFragment(), "Semestre");
+        adapter.AddFragment(new HorarioFragment(), horario);
+        adapter.AddFragment(new MallaFragment(), malla);
+        adapter.AddFragment(new SemestreFragment(),semestre);
         //adapter.AddFragment(new LinksFragment(), "Links");
         adapter.AddFragment(fragobj, "Links");
 
