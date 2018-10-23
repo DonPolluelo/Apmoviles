@@ -9,19 +9,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nombre"
-        android:hint="Nombre Evaluación"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nota"
-        android:inputType="numberDecimal"
-        android:hint="Nota"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/porcentaje"
-        android:hint="Porcentaje"/>
+        android:id="@+id/nombre_ramo"
+        android:hint="Nombre Ramo"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,11 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Agregar"
-            android:id="@+id/agregar_ramo"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"
-            android:id="@+id/cancelar_ramo"/>
+            android:id="@+id/agregar_ramo"
+            android:onClick="agregarRamo"/>
     </LinearLayout>
 </LinearLayout>

@@ -10,14 +10,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.uniup.uniup.db.RamoDB;
-import com.example.uniup.uniup.models.Ramo;
-
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewpager;
-    private RamoDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +23,6 @@ public class MainActivity extends AppCompatActivity {
         //Toolbar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(myToolbar);
-
-        //DB
-        db = new RamoDB(this);
-
-        Ramo ramo1 = new Ramo("Mate");
-        Ramo ramo2 = new Ramo("Fisica");
-        Ramo ramo3 = new Ramo("Quimica");
-        Ramo ramo4 = new Ramo("Progra");
-
-        db.insertRamo(ramo1);
-        db.insertRamo(ramo2);
-        db.insertRamo(ramo3);
-        db.insertRamo(ramo4);
-
 
         Intent intent = getIntent();
         String university = intent.getStringExtra("uni");
@@ -66,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -95,4 +77,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    */
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import java.util.ArrayList;
 public class SemestreFragment extends Fragment {
 
     private static final String TAG = "OnCreateView";
-
     private RamoDB db;
 
 
@@ -38,7 +38,15 @@ public class SemestreFragment extends Fragment {
         db = new RamoDB(getActivity());
 
         ListView lv = (ListView) view.findViewById(R.id.mylistview);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.boton_ramo);
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),AgregarRamoActivity.class);
+                startActivity(i);
+            }
+        });
 
         final ArrayList<Ramo> listaRamos = db.consultarListaRamos();
         ArrayList<String> infoRamos = new ArrayList<>();
