@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <include
         layout = "@layout/app_bar"
         android:id="@+id/app_bar">
@@ -13,43 +14,51 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="4" >
+        android:layout_height="367dp"
+        android:layout_weight="4"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="240dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Seleccione su Universidad:"
             android:textColor="@color/colorPrimary"
-            android:textSize="25sp" />
+            android:textSize="36sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="2" >
+        android:layout_height="301dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/usmbutton_id"
-            android:layout_width="247dp"
-            android:layout_height="167dp"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
             android:layout_weight="1"
-            android:background="@drawable/usm"
+            android:background="@drawable/usm_button"
             android:gravity="center" />
 
 
         <ImageButton
             android:id="@+id/pucvbutton_id"
-            android:layout_width="wrap_content"
-            android:layout_height="167dp"
-            android:layout_weight="3"
-            android:background="@drawable/pucv"
-            android:gravity="center" />
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_weight="1"
+            android:background="@drawable/pucv_button"
+            android:gravity="center"
+            android:paddingBottom="-20dp" />
 
     </LinearLayout>
 

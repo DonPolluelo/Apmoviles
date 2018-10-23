@@ -30,7 +30,8 @@
             android:hint="Nombre Ramo"
             android:padding="10dp"
             android:singleLine="false"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark" />
 
         <Button
             android:id="@+id/agregar_ramo"
