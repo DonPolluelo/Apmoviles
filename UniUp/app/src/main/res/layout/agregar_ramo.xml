@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <EditText
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nombre_ramo"
-        android:hint="Nombre Ramo"/>
+        android:layout_height="98dp"
+        android:layout_marginTop="50dp"
+        android:text="Ingresa el Nombre del Ramo:"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nombre_ramo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="?attr/colorBackgroundFloating"
+            android:hint="Nombre Ramo"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/agregar_ramo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="?android:attr/colorActivatedHighlight"
+            android:onClick="agregarRamo"
+            android:text="Agregar"
+            android:textSize="24sp" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Agregar"
-            android:id="@+id/agregar_ramo"
-            android:onClick="agregarRamo"/>
+
     </LinearLayout>
+
 </LinearLayout>

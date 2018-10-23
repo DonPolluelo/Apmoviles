@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -16,6 +17,10 @@ public class MenuUniversidadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_universidad);
+        //Toolbar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(myToolbar);
+
 
         usm = (ImageButton) findViewById(R.id.usmbutton_id);
         pucv = (ImageButton) findViewById(R.id.pucvbutton_id);

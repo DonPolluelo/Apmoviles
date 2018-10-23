@@ -4,19 +4,25 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:textColorSecondary">#FFFF</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+
     </style>
 
     <!--  Theme de barra superior -->
 
     <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">#FFFF</item>
     </style>
+
     <!--  Theme de popup tres puntos -->
 
-    <style name="CustomPopupStyle" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:background">@color/colorAccent</item>
+    <style name="CustomPopupStyle" parent="android:Theme.Holo.Light">
+        <item name="android:background">#FFFF</item>
+        <item name="android:colorAccent">@color/colorPrimaryDark</item>
         <item name="overlapAnchor">false</item>
         <item name="android:dropDownVerticalOffset">-4dp</item>
     </style>

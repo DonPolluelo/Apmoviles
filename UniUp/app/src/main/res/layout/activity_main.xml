@@ -13,11 +13,13 @@
     </include>
 
     <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#497da4"
+        android:textColor="@color/colorPrimary"
         app:tabGravity="fill"
-        app:tabMode="fixed"
-        android:id="@+id/tablayout_id"/>
+        app:tabMode="fixed" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager_id"
