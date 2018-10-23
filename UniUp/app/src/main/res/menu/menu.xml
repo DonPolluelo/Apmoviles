@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_universidad"
+        android:title="@string/universidad_name"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/action_carrera"
+        android:title="@string/carrera_name"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/action_horario"
+        android:title="@string/horario_name"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/action_semestre"
+        android:title="@string/semestre_name"
+        app:showAsAction="never">
+    </item>
+</menu>
