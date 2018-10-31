@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -19,7 +18,7 @@
         android:layout_marginTop="50dp"
         android:text="@string/ingresa_nombre_del_ramo"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/textColorPrimary"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -32,12 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="?attr/colorBackgroundFloating"
+            android:background="@android:color/background_light"
             android:hint="@string/nombre_ramo"
             android:padding="10dp"
             android:singleLine="false"
             android:textAlignment="center"
-            android:textColor="@android:color/background_dark"> <requestFocus />
+            android:textColor="@android:color/background_dark">
+
+            <requestFocus />
         </EditText>
 
         <Button
@@ -45,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorAccent"
+            android:background="#E91E63"
             android:onClick="agregarRamo"
             android:text="@string/agregar_boton"
             android:textColor="@android:color/background_light"

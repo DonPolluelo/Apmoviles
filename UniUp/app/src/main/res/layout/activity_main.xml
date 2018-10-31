@@ -16,8 +16,8 @@
         android:id="@+id/tablayout_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0D47A1"
-        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
         app:tabGravity="fill"
         app:tabMode="fixed" />
 

@@ -69,10 +69,10 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),select+" UTFSM", Toast.LENGTH_LONG).show();
                 }
                 if (position==1){
-                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, MainActivity.class);
+                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, CarrerasPUCVActivity.class);
 
-                  String university = "pucv";
-                    Inicio.putExtra("uni", university);
+                  /*String university = "pucv";
+                    Inicio.putExtra("uni", university);*/
 
                     startActivity(Inicio);
                     Toast.makeText(getApplicationContext(),select+" PUCV", Toast.LENGTH_LONG).show();
