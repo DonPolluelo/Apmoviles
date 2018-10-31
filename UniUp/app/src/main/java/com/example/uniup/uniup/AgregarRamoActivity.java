@@ -26,7 +26,7 @@ public class AgregarRamoActivity extends AppCompatActivity {
         RamoDB db = new RamoDB(this);
         Ramo ramo = new Ramo(nombre.getText().toString());
         db.insertRamo(ramo);
-        Intent intent = new Intent(getApplicationContext(), MenuUniversidadActivity.class);
+        Intent intent = new Intent(AgregarRamoActivity.this, LinksFragment.class);
         startActivity(intent);
     }
 }

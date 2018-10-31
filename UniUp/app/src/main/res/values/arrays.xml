@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="arrayUniversidades">
+      <item>Universidad Técnica Federico Santa María</item>
+      <item>Unversidad Católica de Valparaíso</item>
+      <item>Universidad de Chile</item>
+      <item>Universidad Católica de Chile</item>
+      <item>Universidad de Concepción</item>
+      <item>Unversidad de Valparaíso</item>
+      <item>Universidad de Playa Ancha</item>
+      <item>Universidad Andrés Bello</item>
+      <item>Universidad de Santiago</item>
+      <item>Unversidad de Viña del Mar</item>
+      <item>Universidad Adolfo Ibañez</item>
+      <item>Universidad Autónoma</item>
+      <item>Universidad Católica del Maule</item>
+      <item>Unversidad de La Serena</item>
+      <item>INACAP</item>
+      <item>DUOC UC</item>
+  </string-array>
+</resources>

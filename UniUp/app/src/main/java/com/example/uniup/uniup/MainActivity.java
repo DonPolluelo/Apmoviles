@@ -9,6 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         String horario = getResources().getString(R.string.horario);
         String malla = getResources().getString(R.string.malla);
         String semestre = getResources().getString(R.string.semestre);
+
 
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
@@ -67,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 // Agregar actividad editar mi semestre
                 break;
             case R.id.action_universidad:
-                Intent universidad = new Intent(this, MenuUniversidadActivity.class);
+                Intent universidad = new Intent(this, MenuUniversidadesListViewActivity.class);
                 startActivity(universidad);
                 break;
             case R.id.action_carrera:

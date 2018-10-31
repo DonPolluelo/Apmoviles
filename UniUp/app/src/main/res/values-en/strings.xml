@@ -10,6 +10,8 @@
     <string name="malla">Subjects</string>
     <string name="semestre">Semester</string>
     <string name="selecciona">Select your University:</string>
+    <string name="mensaje_proximamente">This University will be enable in a future updates!</string>
+    <string name="mensaje_seleccionaste">Selected</string>
     <string name="ingresa_nombre_del_ramo">Write down the subjects name:</string>
     <string name="nombre_ramo">Subjects Name</string>
     <string name="agregar_boton">Add</string>

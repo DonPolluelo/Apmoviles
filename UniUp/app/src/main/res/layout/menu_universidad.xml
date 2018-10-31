@@ -8,9 +8,9 @@
     android:orientation="vertical" >
 
     <include
-        layout = "@layout/app_bar"
-        android:id="@+id/app_bar">
-    </include>
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:visibility="visible"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
