@@ -19,8 +19,7 @@
 
         <activity android:name=".MainActivity" ></activity>
         <activity android:name=".MenuUniversidadesListViewActivity"></activity>
-        <activity android:name=".MenuUniversidadActivity" ></activity>
-        <activity android:name=".MenuCarrerasActivity" ></activity>
+        <activity android:name=".CarrerasUSMActivity"></activity>
         <activity android:name=".ListaNotasActivity" ></activity>
         <activity android:name=".AgregarRamoActivity" ></activity>
 

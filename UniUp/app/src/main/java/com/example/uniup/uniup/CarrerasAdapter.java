@@ -6,18 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
  * Created by hecto_000 on 16-08-2015.
  */
-public class UniversidadesAdapter extends ArrayAdapter<Universidades>{
+public class CarrerasAdapter extends ArrayAdapter<Carreras>{
     Context context;
     int LayoutResortId;
-    Universidades data[]= null;
+    Carreras data[]= null;
 
-    public UniversidadesAdapter(Context context, int layoutResortId, Universidades[] data) {
+    public CarrerasAdapter(Context context, int layoutResortId, Carreras[] data) {
         super(context, layoutResortId,data);
         this.context= context;
         this.LayoutResortId= layoutResortId;
@@ -27,27 +26,27 @@ public class UniversidadesAdapter extends ArrayAdapter<Universidades>{
 
     public View getView(int position, View contentView, ViewGroup parent){
         View row= contentView;
-        UniversidadesHolder holder = null;
+        CarrerasHolder holder = null;
 
         if(row==null){
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row= inflater.inflate(LayoutResortId, parent, false);
-            holder= new UniversidadesHolder();
+            holder= new CarrerasHolder();
             holder.texto = (TextView) row.findViewById((R.id.tv));
             row.setTag(holder);
         }
         else{
-            holder= (UniversidadesHolder) row.getTag();
+            holder= (CarrerasHolder) row.getTag();
         }
 
-        Universidades universidades = data[position];
-        holder.texto.setText(universidades.title);
+        Carreras carreras = data[position];
+        holder.texto.setText(carreras.title);
 
 
         return row;
     }
 
-    static class UniversidadesHolder{
+    static class CarrerasHolder{
         TextView texto;
     }
 }

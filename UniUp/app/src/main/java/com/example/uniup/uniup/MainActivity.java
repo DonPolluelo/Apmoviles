@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String university = intent.getStringExtra("uni");
-
+        String career = intent.getStringExtra("car");
         Bundle bundle = new Bundle();
         bundle.putString("uni", university);
+        bundle.putString("car",career);
         LinksFragment fragobj = new LinksFragment();
         fragobj.setArguments(bundle);
 
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(universidad);
                 break;
             case R.id.action_carrera:
-                Intent carrera = new Intent(this, MenuCarrerasActivity.class);
+                Intent carrera = new Intent(this, CarrerasUSMActivity.class);
                 startActivity(carrera);
                 break;
             default:

@@ -57,8 +57,6 @@ public class RamoDB {
             ramo.setId(cursor.getInt(0));
             ramo.setName(cursor.getString(1));
 
-
-
             listaRamos.add(ramo);
         }
         this.closeDB();
