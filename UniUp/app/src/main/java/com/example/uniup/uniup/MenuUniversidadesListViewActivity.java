@@ -15,24 +15,36 @@ import android.widget.Toast;
 public class MenuUniversidadesListViewActivity extends AppCompatActivity {
 
     ListView listaUniversidades;
-    String[] universidades = new String[]{"Universidad Técnica Federico Santa María", "Unversidad Católica de Valparaíso", "Universidad de Chile",
-            "Universidad Católica de Chile", "Universidad de Concepción", "Unversidad de Valparaíso",
-            "Universidad de Playa Ancha", "Universidad Andrés Bello", "Universidad de Santiago",
-            "Unversidad de Viña del Mar", "Universidad Adolfo Ibañez", "Universidad Autónoma",
-            "Universidad Católica del Maule", "Unversidad de La Serena", "INACAP", "DUOC UC"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_universidad_listview);
 
-        //List View de Universidades
+        Universidades universidades_data[] = new Universidades[]{
+                new Universidades("Universidad Técnica Federico Santa María"),
+                new Universidades("Unversidad Católica de Valparaíso"),
+                new Universidades("Universidad de Chile"),
+                new Universidades("Universidad Católica"),
+                new Universidades("Universidad de Santiago"),
+                new Universidades("Universidad de Concepción"),
+                new Universidades("Universidad Adolfo Ibañez"),
+                new Universidades("Universidad Andrés Bello"),
+                new Universidades("Universidad de Valparaíso"),
+                new Universidades("Universidad de Playa Ancha"),
+                new Universidades("Universidad Católica del Maule"),
+                new Universidades("Universidad de La Serena"),
+                new Universidades("Universidad Autónoma"),
+                new Universidades("Universidad de Viña del Mar"),
+                new Universidades("INACAP"),
+                new Universidades("Duoc UC"),
+        };
+
+        UniversidadesAdapter adapter = new UniversidadesAdapter(this,R.layout.list_item,universidades_data);
+
         listaUniversidades= (ListView) findViewById(R.id.listaU);
-
-        ArrayAdapter<String>  adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_expandable_list_item_1,universidades);
-
         listaUniversidades.setAdapter(adapter);
+
         listaUniversidades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
 
