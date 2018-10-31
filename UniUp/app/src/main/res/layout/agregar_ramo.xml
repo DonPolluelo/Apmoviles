@@ -10,7 +10,6 @@
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar"
-        android:layout_width="match_parent"
         android:visibility="visible"></include>
 
     <TextView

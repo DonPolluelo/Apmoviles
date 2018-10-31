@@ -6,4 +6,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="10dp"
-    android:textAppearance="@style/TextAppearance.AppCompat"></TextView>
+    android:textAppearance="@style/TextAppearance.AppCompat"
+    android:textColor="@android:color/background_dark"
+    android:textSize="18sp"></TextView>
