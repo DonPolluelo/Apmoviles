@@ -9,6 +9,9 @@
     <string name="malla">Malla</string>
     <string name="semestre">Semestre</string>
     <string name="selecciona">Selecciona tu Universidad:</string>
+    <string name="selecciona_carrera">Selecciona tu Carrera:</string>
+    <string name="mensaje_proximamente">Esta Universidad estará disponible en futuras actualizaciones!</string>
+    <string name="mensaje_seleccionaste">Seleccionaste</string>
     <string name="ingresa_nombre_del_ramo">Ingresa el Nombre del Ramo:</string>
     <string name="nombre_ramo">Nombre del Ramo</string>
     <string name="agregar_boton">Agregar</string>

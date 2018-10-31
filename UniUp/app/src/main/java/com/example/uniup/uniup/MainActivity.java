@@ -9,6 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,15 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String university = intent.getStringExtra("uni");
-
+        String career = intent.getStringExtra("car");
         Bundle bundle = new Bundle();
         bundle.putString("uni", university);
+        bundle.putString("car",career);
         LinksFragment fragobj = new LinksFragment();
         fragobj.setArguments(bundle);
 
         String horario = getResources().getString(R.string.horario);
         String malla = getResources().getString(R.string.malla);
         String semestre = getResources().getString(R.string.semestre);
+
 
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
@@ -67,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
                 // Agregar actividad editar mi semestre
                 break;
             case R.id.action_universidad:
-                Intent universidad = new Intent(this, MenuUniversidadActivity.class);
+                Intent universidad = new Intent(this, MenuUniversidadesListViewActivity.class);
                 startActivity(universidad);
                 break;
             case R.id.action_carrera:
-                Intent carrera = new Intent(this, MenuCarrerasActivity.class);
+                Intent carrera = new Intent(this, CarrerasUSMActivity.class);
                 startActivity(carrera);
                 break;
             default:
