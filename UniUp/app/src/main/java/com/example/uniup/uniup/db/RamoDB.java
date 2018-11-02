@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import com.example.uniup.uniup.models.Ramo;
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 public class RamoDB {
     private static final String TAG = "RamoDB";
     private SQLiteDatabase db;
-    private DBHelper dbHelper;
+    private DataBaseHelper dbHelper;
 
-    public RamoDB(Context context) {
-        dbHelper = new DBHelper(context);
+    public RamoDB(DataBaseHelper dbHelper) {
+        this.dbHelper = dbHelper;
     }
 
     private void openReadableDB() {
@@ -33,8 +34,6 @@ public class RamoDB {
             db.close();
         }
     }
-
-    // CRUD
 
     public long insertRamo(Ramo ramo) {
         this.openWriteableDB();
@@ -64,29 +63,9 @@ public class RamoDB {
         return listaRamos;
     }
 
-
-
     private ContentValues clienteMapperContentValues(Ramo ramo) {
         ContentValues cv = new ContentValues();
-        cv.put(ConstantsDB.RAMO_NOMBRE, ramo.getName());
+        cv.put(ConstantsDB.NOMBRE_RAMO, ramo.getName());
         return cv;
-    }
-
-    private static class DBHelper extends SQLiteOpenHelper {
-
-        public DBHelper(Context context) {
-            super(context, ConstantsDB.DB_NAME, null, ConstantsDB.DB_VERSION);
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            db.execSQL(ConstantsDB.TABLA_RAMO_SQL);
-            Log.i(TAG, "Base de datos creada");
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-        }
     }
 }

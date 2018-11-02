@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.models.Ramo;
 
@@ -30,7 +31,8 @@ public class AgregarRamoActivity extends AppCompatActivity {
     }
 
     public void agregarRamo(View view){
-        RamoDB db = new RamoDB(this);
+        DataBaseHelper dbHelper = new DataBaseHelper(this);
+        RamoDB db = new RamoDB(dbHelper);
         Ramo ramo = new Ramo(nombre.getText().toString());
         db.insertRamo(ramo);
         Intent intent = new Intent(AgregarRamoActivity.this, LinksFragment.class);

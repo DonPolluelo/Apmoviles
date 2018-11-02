@@ -16,19 +16,15 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+
+    private static String TAG = "DataBaseHelper";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
-    private static final String DATABASE_NAME = "YOURDBNAME";
-    public final static String DATABASE_PATH = "/data/data/com.your.packagename/databases/";
-    public static final int DATABASE_VERSION = 1;
+
     public DataBaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, ConstantsDB.DB_NAME, null, ConstantsDB.DB_VERSION);
         this.myContext = context;
-
     }
-
-
-
 
     //Create a empty database on the system
     public void createDatabase() throws IOException
@@ -38,7 +34,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         if(dbExist)
         {
-            Log.v("DB Exists", "db exists");
+            Log.v(TAG, "db exists");
             // By calling this method here onUpgrade will be called on a
             // writeable database, but only if the version number has been
             // bumped
@@ -67,7 +63,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         boolean checkDB = false;
         try
         {
-            String myPath = DATABASE_PATH + DATABASE_NAME;
+            String myPath = ConstantsDB.DATABASE_PATH + ConstantsDB.DB_NAME;
             File dbfile = new File(myPath);
             checkDB = dbfile.exists();
         }
@@ -79,9 +75,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //Copies your database from your local assets-folder to the just created empty database in the system folder
     private void copyDataBase() throws IOException
     {
-
-        InputStream mInput = myContext.getAssets().open(DATABASE_NAME);
-        String outFileName = DATABASE_PATH + DATABASE_NAME;
+        Log.i(TAG,"Copiando Base de Datos");
+        InputStream mInput = myContext.getAssets().open(ConstantsDB.DB_NAME);
+        String outFileName = ConstantsDB.DATABASE_PATH + ConstantsDB.DB_NAME;
         OutputStream mOutput = new FileOutputStream(outFileName);
         byte[] mBuffer = new byte[2024];
         int mLength;
@@ -95,7 +91,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //delete database
     public void db_delete()
     {
-        File file = new File(DATABASE_PATH + DATABASE_NAME);
+        File file = new File(ConstantsDB.DATABASE_PATH + ConstantsDB.DB_NAME);
         if(file.exists())
         {
             file.delete();
@@ -105,7 +101,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //Open database
     public void openDatabase() throws SQLException
     {
-        String myPath = DATABASE_PATH + DATABASE_NAME;
+        String myPath = ConstantsDB.DATABASE_PATH + ConstantsDB.DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
@@ -117,7 +113,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // TODO Auto-generated method stub
 
     }
 
