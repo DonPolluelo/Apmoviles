@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(universidad);
                 break;
             case R.id.action_carrera:
-                Intent carrera = new Intent(this, CarrerasUSMActivity.class);
+                Intent carrera = new Intent(this, Carreras.class);
                 startActivity(carrera);
                 break;
             default:
