@@ -1,6 +1,7 @@
 package com.example.uniup.uniup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.ListMenuItemView;
@@ -60,6 +61,13 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
 
 
                 if (position==0){
+
+                    SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("usm", true);
+                    editor.putBoolean("pucv", false);
+                    editor.apply();
+
                     Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, CarrerasUSMActivity.class);
 
                 /*String university = "usm";
@@ -69,6 +77,13 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),select+" UTFSM", Toast.LENGTH_LONG).show();
                 }
                 if (position==1){
+
+                    SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("usm", false);
+                    editor.putBoolean("pucv", true);
+                    editor.apply();
+
                     Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, CarrerasPUCVActivity.class);
 
                   /*String university = "pucv";
