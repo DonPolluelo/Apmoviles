@@ -11,6 +11,8 @@ import android.widget.TextView;
 /**
  * Created by hecto_000 on 16-08-2015.
  */
+
+/*
 public class CarrerasAdapter extends ArrayAdapter<Carreras>{
     Context context;
     int LayoutResortId;
@@ -49,4 +51,4 @@ public class CarrerasAdapter extends ArrayAdapter<Carreras>{
     static class CarrerasHolder{
         TextView texto;
     }
-}
+}*/

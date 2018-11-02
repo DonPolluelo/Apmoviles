@@ -68,7 +68,7 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
                     editor.putBoolean("pucv", false);
                     editor.apply();
 
-                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, CarrerasUSMActivity.class);
+                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, Carreras.class);
 
                 /*String university = "usm";
                     Inicio.putExtra("uni", university);*/
@@ -84,7 +84,7 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
                     editor.putBoolean("pucv", true);
                     editor.apply();
 
-                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, CarrerasPUCVActivity.class);
+                    Intent Inicio = new Intent(MenuUniversidadesListViewActivity.this, Carreras.class);
 
                   /*String university = "pucv";
                     Inicio.putExtra("uni", university);*/
