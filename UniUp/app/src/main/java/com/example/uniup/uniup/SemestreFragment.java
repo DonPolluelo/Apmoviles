@@ -7,13 +7,17 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.uniup.uniup.adapters.SemestreAdapter;
 import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.models.Ramo;
@@ -22,8 +26,9 @@ import java.util.ArrayList;
 
 public class SemestreFragment extends Fragment {
 
-    private static final String TAG = "OnCreateView";
+    private static final String TAG = "SemestreFragment";
     private RamoDB db;
+    RecyclerView recycler;
 
 
     public SemestreFragment() {
@@ -40,7 +45,8 @@ public class SemestreFragment extends Fragment {
         DataBaseHelper dbHelper = new DataBaseHelper(getActivity());
         db = new RamoDB(dbHelper);
 
-        ListView lv = (ListView) view.findViewById(R.id.mylistview);
+        recycler = (RecyclerView) view.findViewById(R.id.recycler_semestre);
+        recycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.boton_ramo);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -58,20 +64,8 @@ public class SemestreFragment extends Fragment {
             infoRamos.add(listaRamos.get(i).getName());
         }
 
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.list_item, infoRamos);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Abrir nueva activity
-                Ramo ramo = listaRamos.get(position);
-                Intent intent = new Intent(getActivity(), ListaNotasActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("ramo",ramo);
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
+        SemestreAdapter adapter = new SemestreAdapter(infoRamos);
+        recycler.setAdapter(adapter);
 
         return view;
     }
