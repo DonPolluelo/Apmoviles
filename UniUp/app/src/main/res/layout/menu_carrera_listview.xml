@@ -24,7 +24,8 @@
         android:gravity="center"
         android:text="@string/selecciona_carrera"
         android:textColor="@android:color/darker_gray"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+         />
 
     <ListView
         android:id="@+id/listaC"
