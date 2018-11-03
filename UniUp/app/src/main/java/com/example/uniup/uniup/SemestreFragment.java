@@ -2,6 +2,7 @@ package com.example.uniup.uniup;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.models.Ramo;
 
@@ -35,7 +37,8 @@ public class SemestreFragment extends Fragment {
 
 
         view = inflater.inflate(R.layout.semestre_fragment, container, false);
-        db = new RamoDB(getActivity());
+        DataBaseHelper dbHelper = new DataBaseHelper(getActivity());
+        db = new RamoDB(dbHelper);
 
         ListView lv = (ListView) view.findViewById(R.id.mylistview);
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.boton_ramo);
