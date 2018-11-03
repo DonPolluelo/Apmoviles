@@ -21,6 +21,8 @@ import com.example.uniup.uniup.models.Carrera;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Carreras extends AppCompatActivity {
 
@@ -56,7 +58,7 @@ public class Carreras extends AppCompatActivity {
 
             consultarListaCarreras(mdb);
 
-            ArrayAdapter adaptador = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
+            ArrayAdapter adaptador = new ArrayAdapter(this,R.layout.list_item,listaInformacion);
             listViewCarreras.setAdapter(adaptador);
 
             listViewCarreras.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -115,9 +117,9 @@ public class Carreras extends AppCompatActivity {
             listaInformacion=new ArrayList<String>();
 
             for (int i=0; i<listaCarrera.size();i++){
-                listaInformacion.add(listaCarrera.get(i).getId()+" - "
-                        +listaCarrera.get(i).getNombre());
+                listaInformacion.add(listaCarrera.get(i).getNombre());
             }
+            Collections.sort(listaInformacion);
 
         }
 
