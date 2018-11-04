@@ -1,6 +1,7 @@
 package com.example.uniup.uniup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("car",career);
         LinksFragment fragobj = new LinksFragment();
         fragobj.setArguments(bundle);
+
+
 
         String horario = getResources().getString(R.string.horario);
         String malla = getResources().getString(R.string.malla);
