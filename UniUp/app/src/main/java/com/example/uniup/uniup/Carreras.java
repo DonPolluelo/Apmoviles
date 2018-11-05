@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,9 +21,12 @@ import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.models.Carrera;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Carreras extends AppCompatActivity {
 
@@ -39,6 +43,11 @@ public class Carreras extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.menu_carrera_listview);
+
+
+            //Toolbar
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
+            setSupportActionBar(myToolbar);
 
             mDBHelper = new DataBaseHelper(this);
 
@@ -61,9 +70,29 @@ public class Carreras extends AppCompatActivity {
             ArrayAdapter adaptador = new ArrayAdapter(this,R.layout.list_item,listaInformacion);
             listViewCarreras.setAdapter(adaptador);
 
+
+
+            SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
+            final String career = prefs.getString("carrera", "");
+
+
             listViewCarreras.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+
+                    Collections.sort(listaCarrera, Carrera.CarreraNameComparator);
+                    String informacion = listaCarrera.get(pos).getNombre();
+
+                    SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("carrera", informacion);
+                    editor.apply();
+
+
+                    final String c = prefs.getString("carrera", "");
+
+                    Toast.makeText(getApplicationContext(),c,Toast.LENGTH_LONG).show();
+
 
                     Intent intent=new Intent(Carreras.this,MainActivity.class);
 
@@ -119,7 +148,7 @@ public class Carreras extends AppCompatActivity {
             for (int i=0; i<listaCarrera.size();i++){
                 listaInformacion.add(listaCarrera.get(i).getNombre());
             }
-            Collections.sort(listaInformacion);
+            Collections.sort(listaInformacion, String.CASE_INSENSITIVE_ORDER);
 
         }
 
