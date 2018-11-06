@@ -11,4 +11,9 @@
         android:title="@string/carrera_name"
         app:showAsAction="never">
     </item>
+    <item
+        android:id="@+id/action_semestre"
+        android:title="@string/semestre_name"
+        app:showAsAction="never">
+    </item>
 </menu>
