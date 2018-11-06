@@ -70,12 +70,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_horario:
-                // Agregar actividad editar horario
-                break;
-            case R.id.action_semestre:
-                // Agregar actividad editar mi semestre
-                break;
             case R.id.action_universidad:
                 Intent universidad = new Intent(this, MenuUniversidadesListViewActivity.class);
                 startActivity(universidad);
