@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 // Agregar actividad editar horario
                 break;
             case R.id.action_semestre:
-                // Agregar actividad editar mi semestre
+                Intent semestre = new Intent(this, MiSemestreActivity.class);
+                startActivity(semestre);
                 break;
             case R.id.action_universidad:
                 Intent universidad = new Intent(this, MenuUniversidadesListViewActivity.class);

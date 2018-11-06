@@ -96,8 +96,6 @@ public class MenuUniversidadesListViewActivity extends AppCompatActivity {
                 if (position!=1 & position!=0){
                     Toast.makeText(getApplicationContext(),proximamente, Toast.LENGTH_LONG).show();
                 }
-
-
             }
         });
     }

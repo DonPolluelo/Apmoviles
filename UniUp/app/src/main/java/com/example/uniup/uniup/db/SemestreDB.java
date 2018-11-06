@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.uniup.uniup.models.Ramo;
 import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
@@ -78,9 +79,35 @@ public class SemestreDB {
             semestre.setNombre(cursor.getString(1));
 
             listaSemestres.add(semestre);
+            Log.i(TAG,"Semestre recuperado");
         }
         this.closeDB();
 
         return listaSemestres;
+    }
+
+    public ArrayList consultarRamosPorSemestre(String id_semestre) {
+        this.openReadableDB();
+        Log.i(TAG,id_semestre);
+        Ramo ramo;
+        ArrayList<Ramo> listaRamos = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_RAMO +
+                " INNER JOIN " + ConstantsDB.TABLA_RAMOSDELSEMESTRE +
+                " ON " + ConstantsDB.TABLA_RAMOSDELSEMESTRE +"."+ConstantsDB.ID_RAMO+ " = "+
+                ConstantsDB.TABLA_RAMO+"."+ConstantsDB.ID_RAMO +
+                " WHERE " + ConstantsDB.TABLA_RAMOSDELSEMESTRE+"."+ConstantsDB.ID_SEMESTRE + " =?",new String[]{id_semestre});
+
+        while (cursor.moveToNext()){
+            ramo = new Ramo();
+            ramo.setId(cursor.getInt(0));
+            ramo.setName(cursor.getString(1));
+
+            listaRamos.add(ramo);
+            Log.i(TAG,"Ramo mostrado en semestre");
+        }
+        this.closeDB();
+
+        return listaRamos;
     }
 }

@@ -26,6 +26,7 @@
         <activity android:name=".Carreras" ></activity>
         <activity android:name=".AgregarSemestreActivity"></activity>
         <activity android:name=".CarrerasPorSemestre" ></activity>
+        <activity android:name=".MiSemestreActivity" ></activity>
 
     </application>
 

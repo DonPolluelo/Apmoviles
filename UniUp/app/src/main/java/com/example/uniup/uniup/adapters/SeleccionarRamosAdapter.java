@@ -10,15 +10,13 @@ import android.widget.TextView;
 
 import com.example.uniup.uniup.R;
 import com.example.uniup.uniup.models.Ramo;
-import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SeleccionarRamosAdapter extends BaseAdapter {
-    Activity activity;
-    ArrayList<Ramo> ramo;
-    LayoutInflater inflater;
+    private Activity activity;
+    private ArrayList<Ramo> ramo;
+    private LayoutInflater inflater;
 
     public SeleccionarRamosAdapter(Activity activity) {
         this.activity = activity;

@@ -1,7 +1,6 @@
 package com.example.uniup.uniup.db;
 
 import android.content.ContentValues;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -10,8 +9,6 @@ import android.util.Log;
 import com.example.uniup.uniup.models.Ramo;
 
 import java.util.ArrayList;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class RamoDB {
     private static final String TAG = "RamoDB";
@@ -64,6 +61,7 @@ public class RamoDB {
             ramo.setCheck(false);
 
             listaRamos.add(ramo);
+
         }
         this.closeDB();
 

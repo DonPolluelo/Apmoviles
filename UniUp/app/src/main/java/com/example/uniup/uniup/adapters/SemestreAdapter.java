@@ -50,4 +50,10 @@ public class SemestreAdapter extends RecyclerView.Adapter<SemestreAdapter.ViewHo
             nombre.setText(s);
         }
     }
+
+    public void updateRecords(ArrayList<String> lista_ramos){
+        this.lista_ramos = lista_ramos;
+
+        notifyDataSetChanged();
+    }
 }
