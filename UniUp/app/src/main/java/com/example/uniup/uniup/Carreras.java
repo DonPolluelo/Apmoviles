@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +43,11 @@ public class Carreras extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.menu_carrera_listview);
+
+
+            //Toolbar
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
+            setSupportActionBar(myToolbar);
 
             mDBHelper = new DataBaseHelper(this);
 

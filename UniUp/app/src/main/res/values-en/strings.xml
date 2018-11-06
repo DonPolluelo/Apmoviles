@@ -12,6 +12,7 @@
     <string name="selecciona">Select your University:</string>
     <string name="selecciona_carrera">Select your Career:</string>
     <string name="mensaje_proximamente">This University will be enable in a future updates!</string>
+    <string name="mensaje_links">Useful Links from your University:</string>
     <string name="mensaje_seleccionaste">Selected</string>
     <string name="ingresa_nombre_del_ramo">Write down the subjects name:</string>
     <string name="nombre_ramo">Subjects Name</string>
