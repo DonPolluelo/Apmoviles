@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Ramo implements Serializable {
     private int id;
     private String name;
+    private boolean isCheck;
 
     public Ramo(){}
 
@@ -36,4 +37,11 @@ public class Ramo implements Serializable {
                 '}';
     }
 
+    public void setCheck(boolean check) {
+        isCheck = check;
+    }
+
+    public boolean isCheck() {
+        return isCheck;
+    }
 }

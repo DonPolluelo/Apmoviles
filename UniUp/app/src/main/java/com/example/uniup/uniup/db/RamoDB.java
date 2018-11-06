@@ -55,6 +55,7 @@ public class RamoDB {
             ramo = new Ramo();
             ramo.setId(cursor.getInt(0));
             ramo.setName(cursor.getString(1));
+            ramo.setCheck(false);
 
             listaRamos.add(ramo);
         }

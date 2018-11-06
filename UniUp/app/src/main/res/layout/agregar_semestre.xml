@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:visibility="visible">
+
+    </include>
+
+    <EditText
+        android:id="@+id/nombre_semestre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:hint="Nombre"
+        android:padding="10dp"
+        android:textColor="@android:color/background_dark" />
+    <ListView
+        android:id="@+id/agregar_semestre_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:padding="10dp"/>
+    <Button
+        android:id="@+id/agregar_ramo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#E91E63"
+        android:onClick="agregarSemestre"
+        android:text="@string/agregar_boton"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:layout_weight="1"/>
+</LinearLayout>
