@@ -1,6 +1,7 @@
 package com.example.uniup.uniup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -43,10 +44,13 @@ public class AgregarSemestreActivity extends AppCompatActivity {
 
         ListView lv = (ListView) findViewById(R.id.agregar_semestre_listview);
 
+        SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
+        final int id_career = prefs.getInt("id", 0);
+
         //cargar datos
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         RamoDB db = new RamoDB(dbHelper);
-        listaRamos = db.consultarListaRamos();
+        listaRamos = db.consultarListaRamos(Integer.toString(id_career));
         final SeleccionarRamosAdapter adapter = new SeleccionarRamosAdapter(this,listaRamos);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

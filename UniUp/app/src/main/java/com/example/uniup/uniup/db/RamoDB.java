@@ -1,16 +1,17 @@
 package com.example.uniup.uniup.db;
 
 import android.content.ContentValues;
-import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
+
 import android.util.Log;
 
 import com.example.uniup.uniup.models.Ramo;
 
 import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class RamoDB {
     private static final String TAG = "RamoDB";
@@ -43,13 +44,18 @@ public class RamoDB {
         return rowID;
     }
 
-    public ArrayList consultarListaRamos() {
+    public ArrayList consultarListaRamos(String id_carrera) {
+
         this.openReadableDB();
 
         Ramo ramo;
         ArrayList<Ramo> listaRamos = new ArrayList<>();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_RAMO,null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_RAMO +
+                " INNER JOIN " + ConstantsDB.TABLA_RAMOSPORCARRERA +
+                        " ON " + ConstantsDB.TABLA_RAMOSPORCARRERA +"."+ConstantsDB.ID_RAMO+ " = "+
+                ConstantsDB.TABLA_RAMO+"."+ConstantsDB.ID_RAMO +
+                " WHERE " + ConstantsDB.TABLA_RAMOSPORCARRERA+"."+ConstantsDB.ID_CARRERA + " =?",new String[]{id_carrera});
 
         while (cursor.moveToNext()){
             ramo = new Ramo();

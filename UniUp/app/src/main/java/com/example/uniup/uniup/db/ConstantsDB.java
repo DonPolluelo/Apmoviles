@@ -67,4 +67,7 @@ public class ConstantsDB {
     //TABLA RAMOSDELSEMESTRE
     public static final String TABLA_RAMOSDELSEMESTRE = "RamosDelSemestre";
 
+    //TABLA RAMOSPORCARRERA
+    public static final String TABLA_RAMOSPORCARRERA = "RamosPorCarrera";
+
 }

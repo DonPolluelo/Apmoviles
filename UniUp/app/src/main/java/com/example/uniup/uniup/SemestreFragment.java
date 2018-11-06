@@ -1,6 +1,7 @@
 package com.example.uniup.uniup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -23,6 +24,8 @@ import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.models.Ramo;
 
 import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class SemestreFragment extends Fragment {
 
@@ -56,8 +59,10 @@ public class SemestreFragment extends Fragment {
                 startActivity(i);
             }
         });
+        SharedPreferences prefs = getActivity().getSharedPreferences("carrera", MODE_PRIVATE);
+        final int id_career = prefs.getInt("id", 0);
 
-        final ArrayList<Ramo> listaRamos = db.consultarListaRamos();
+        final ArrayList<Ramo> listaRamos = db.consultarListaRamos(Integer.toString(id_career));
         ArrayList<String> infoRamos = new ArrayList<>();
 
         for  (int i = 0; i<listaRamos.size();i++) {
