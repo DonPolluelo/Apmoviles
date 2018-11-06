@@ -41,6 +41,7 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
 
 
 
+
     public MallaFragment() {
 
     }
@@ -52,7 +53,9 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
         SharedPreferences prefs = this.getActivity().getSharedPreferences("carrera", MODE_PRIVATE);
         //final String i = prefs.getString("carrera", "");
 
+        final int id_carrera = prefs.getInt("id", 0);
         final int semestre = prefs.getInt("semestre", 0);
+        final int duracion = prefs.getInt("duracion", 0);
 
 
         view = inflater.inflate(R.layout.malla_fragment, container, false);
@@ -72,9 +75,10 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
         }
 
 
+
         listaInformacion = new ArrayList<>();
 
-        for(int i = 0; i < 12; i++ ){
+        for(int i = 0; i < duracion; i++ ){
             listaInformacion.add("Semestre " + String.valueOf(i + 1));
         }
 

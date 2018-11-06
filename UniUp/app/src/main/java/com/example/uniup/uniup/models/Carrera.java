@@ -6,11 +6,14 @@ public class Carrera implements Comparable<Carrera> {
     private Integer id;
     private String nombre;
     private Integer id_universidad;
+    private Integer duracion;
 
-    public Carrera(Integer id, String nombre, Integer universidad) {
+
+    public Carrera(Integer id, String nombre, Integer universidad, Integer duracion) {
         this.id = id;
         this.nombre = nombre;
         this.id_universidad = universidad;
+        this.duracion = duracion;
     }
 
     public Carrera(){
@@ -40,6 +43,16 @@ public class Carrera implements Comparable<Carrera> {
     public void setId_universidad(Integer universidad) {
         this.id_universidad = universidad;
     }
+
+
+    public Integer getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(Integer duracion) {
+        this.duracion = duracion;
+    }
+
 
 
     public static Comparator<Carrera> CarreraNameComparator
