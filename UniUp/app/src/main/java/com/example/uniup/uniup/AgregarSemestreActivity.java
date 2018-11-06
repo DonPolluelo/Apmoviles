@@ -82,14 +82,23 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         SemestreDB db = new SemestreDB(dbHelper);
         Semestre semestre = new Semestre(nombre.getText().toString());
-        long idSemestre = db.insertarSemestre(semestre);
+        int idSemestre = (int) db.insertarSemestre(semestre);
         Ramo ramo;
         for (int i = 0; i < listaRamos.size();i++){
             ramo = listaRamos.get(i);
             if(ramo.isCheck()){
                 db.insertarRamo(idSemestre,ramo.getId());
+
+                SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("semestre", nombre.getText().toString());
+                editor.putInt("id", idSemestre);
+                editor.apply();
             }
         }
+
+
+
         Intent intent = new Intent(AgregarSemestreActivity.this, MainActivity.class);
         startActivity(intent);
     }
