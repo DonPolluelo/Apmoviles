@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -26,8 +25,18 @@ public class AgregarRamoActivity extends AppCompatActivity {
         //Toolbar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nombre = (EditText) findViewById(R.id.nombre_ramo);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void agregarRamo(View view){
@@ -35,7 +44,7 @@ public class AgregarRamoActivity extends AppCompatActivity {
         RamoDB db = new RamoDB(dbHelper);
         Ramo ramo = new Ramo(nombre.getText().toString());
         db.insertRamo(ramo);
-        Intent intent = new Intent(AgregarRamoActivity.this, LinksFragment.class);
+        Intent intent = new Intent(AgregarRamoActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }

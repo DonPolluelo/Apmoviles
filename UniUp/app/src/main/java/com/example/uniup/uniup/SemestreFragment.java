@@ -52,7 +52,7 @@ public class SemestreFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),AgregarRamoActivity.class);
+                Intent i = new Intent(getActivity(),AgregarSemestreActivity.class);
                 startActivity(i);
             }
         });
