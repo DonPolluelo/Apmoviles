@@ -19,6 +19,7 @@
             android:id="@+id/nombreS"/>
 
 
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_semestre"
             android:layout_width="match_parent"

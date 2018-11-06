@@ -8,21 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 public class HorarioFragment extends Fragment {
 
-    public HorarioFragment() {
+   public HorarioFragment() {
     }
 
     View view;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
         view = inflater.inflate(R.layout.horario_fragment, container, false);
         return view;
     }
-
-
-
-
-}
+    }

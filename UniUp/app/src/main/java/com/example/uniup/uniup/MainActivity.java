@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         viewpager = (ViewPager) findViewById(R.id.viewpager_id);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new HorarioFragment(), horario);
+       // adapter.AddFragment(new HorarioFragment(), horario);
         adapter.AddFragment(new MallaFragment(), malla);
         adapter.AddFragment(new SemestreFragment(),semestre);
         //adapter.AddFragment(new LinksFragment(), "Links");
@@ -70,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_horario:
-                // Agregar actividad editar horario
-                break;
             case R.id.action_semestre:
                 Intent semestre = new Intent(this, MiSemestreActivity.class);
                 startActivity(semestre);
