@@ -1,9 +1,11 @@
 package com.example.uniup.uniup;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -12,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,18 +30,14 @@ import java.util.Collections;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class MallaFragment extends Fragment {
+public class MallaFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     View view;
 
-    ListView listViewRamos;
-    ArrayList<RamoPorCarrera> listaRamo;
+    ListView listViewSemestres;
     ArrayList<String> listaInformacion;
     private DataBaseHelper mDBHelper;
     private SQLiteDatabase mdb;
-
-
-    ArrayList<String> listadeprueba;
 
 
 
@@ -51,7 +50,9 @@ public class MallaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         SharedPreferences prefs = this.getActivity().getSharedPreferences("carrera", MODE_PRIVATE);
-        final String i = prefs.getString("carrera", "");
+        //final String i = prefs.getString("carrera", "");
+
+        final int semestre = prefs.getInt("semestre", 0);
 
 
         view = inflater.inflate(R.layout.malla_fragment, container, false);
@@ -71,85 +72,38 @@ public class MallaFragment extends Fragment {
         }
 
 
-        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
+        listaInformacion = new ArrayList<>();
 
+        for(int i = 0; i < 12; i++ ){
+            listaInformacion.add("Semestre " + String.valueOf(i + 1));
+        }
 
-
-        Toast.makeText(getActivity(),"Seleccionaste " + i ,Toast.LENGTH_LONG).show();
-
-        consultarListaRamos(mdb);
-
-        listViewRamos = (ListView) view.findViewById(R.id.ramolist);
+        listViewSemestres = (ListView) view.findViewById(R.id.ramolist);
 
         ArrayAdapter adaptador = new ArrayAdapter(getActivity(), R.layout.list_item, listaInformacion);
-        listViewRamos.setAdapter(adaptador);
-
+        listViewSemestres.setAdapter(adaptador);
+        listViewSemestres.setOnItemClickListener(this);
 
 
         return view;
     }
 
 
-
-
-
-
-
-
-   private void consultarListaRamos(SQLiteDatabase db) {
+    @Override
+    public void onItemClick(AdapterView parent, View view, int pos, long id) {
 
         SharedPreferences prefs = getActivity().getSharedPreferences("carrera", MODE_PRIVATE);
-        final int id_carrera = prefs.getInt("id", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("semestre", pos + 1);
+        editor.apply();
 
-       //int id_carrera = 1;
-
-
-        RamoPorCarrera ramoxcarrera;
-        listaRamo=new ArrayList<RamoPorCarrera>();
-        listadeprueba = new ArrayList<String>();
-        Cursor cursor;
-
-        cursor=db.rawQuery("SELECT * FROM `RamosPorCarrera` WHERE `id_carrera` = ?", new String[] {String.valueOf(id_carrera)});
-
-
-        while (cursor.moveToNext()){
-            ramoxcarrera=new RamoPorCarrera();
-            ramoxcarrera.setId_carrera(cursor.getInt(0));
-            ramoxcarrera.setId_ramo(cursor.getInt(1));
-            listaRamo.add(ramoxcarrera);
-
-
-            listadeprueba.add(String.valueOf(cursor.getInt(0)));
-
-
-        }
-        obtenerLista();
+        Intent intent = new Intent(getActivity(),CarrerasPorSemestre.class);
+        startActivity(intent);
     }
 
 
 
-    private void obtenerLista() {
-        listaInformacion=new ArrayList<String>();
-        Cursor ramo_cursor;
-        Ramo ramo = null;
 
-        for (int i=0; i<listaRamo.size();i++) {
-             int id_ramo = listaRamo.get(i).getId_ramo();
-
-             ramo_cursor = mdb.rawQuery("SELECT * FROM `Ramo` WHERE `id_ramo` = ?", new String[] {String.valueOf(id_ramo)});
-
-            while (ramo_cursor.moveToNext()) {
-                ramo = new Ramo();
-                ramo.setId(ramo_cursor.getInt(0));
-                ramo.setName(ramo_cursor.getString(1));
-
-
-                listaInformacion.add(ramo.getName());
-            }
-
-        }
-
-    }
 
 
 

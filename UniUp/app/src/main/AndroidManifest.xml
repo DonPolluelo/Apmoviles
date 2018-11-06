@@ -24,6 +24,7 @@
         <activity android:name=".ListaNotasActivity" ></activity>
         <activity android:name=".AgregarRamoActivity" ></activity>
         <activity android:name=".Carreras" ></activity>
+        <activity android:name=".CarrerasPorSemestre" ></activity>
 
     </application>
 

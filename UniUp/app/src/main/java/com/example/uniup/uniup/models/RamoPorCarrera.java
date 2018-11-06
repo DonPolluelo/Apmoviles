@@ -4,6 +4,7 @@ public class RamoPorCarrera {
 
     private int id_carrera;
     private int id_ramo;
+    private int semestre;
 
     public RamoPorCarrera(){}
 
@@ -19,6 +20,14 @@ public class RamoPorCarrera {
 
     public void setId_ramo(int id_ramo){
         this.id_ramo = id_ramo;
+    }
+
+    public int getSemestre(){
+        return semestre;
+    }
+
+    public void setSemestre(int semestre){
+        this.semestre = semestre;
     }
 
 
