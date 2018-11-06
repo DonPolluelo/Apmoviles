@@ -95,9 +95,6 @@ public class Carreras extends AppCompatActivity {
                     final String c = prefs.getString("carrera", "");
                     final int i = prefs.getInt("id", 0);
 
-                    Toast.makeText(getApplicationContext(),"Seleccionaste " + String.valueOf(i) + c,Toast.LENGTH_LONG).show();
-
-
                     Intent intent=new Intent(Carreras.this,MainActivity.class);
 
                     startActivity(intent);
