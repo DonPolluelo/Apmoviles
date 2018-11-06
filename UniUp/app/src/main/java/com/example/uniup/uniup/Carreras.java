@@ -74,6 +74,7 @@ public class Carreras extends AppCompatActivity {
 
             SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
             final String career = prefs.getString("carrera", "");
+            final int id_career = prefs.getInt("id", 0);
 
 
             listViewCarreras.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -82,17 +83,17 @@ public class Carreras extends AppCompatActivity {
 
                     Collections.sort(listaCarrera, Carrera.CarreraNameComparator);
                     String informacion = listaCarrera.get(pos).getNombre();
+                    int id_carrera = listaCarrera.get(pos).getId();
 
                     SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("carrera", informacion);
+                    editor.putInt("id", id_carrera);
                     editor.apply();
 
 
                     final String c = prefs.getString("carrera", "");
-
-                    Toast.makeText(getApplicationContext(),c,Toast.LENGTH_LONG).show();
-
+                    final int i = prefs.getInt("id", 0);
 
                     Intent intent=new Intent(Carreras.this,MainActivity.class);
 
@@ -135,6 +136,7 @@ public class Carreras extends AppCompatActivity {
 
                 listaCarrera.add(carrera);
             }
+
             obtenerLista();
         }
 
