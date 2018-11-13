@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 
 public class HorarioFragment extends Fragment {
@@ -35,8 +36,9 @@ public class HorarioFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),AgregarRamoHorarioActivity.class);
-                startActivity(i);
+                Toast.makeText(getActivity(),"Asignar Horario",Toast.LENGTH_SHORT).show();
+                /*Intent i = new Intent(getActivity(),AgregarRamoHorarioActivity.class);
+                startActivity(i);*/
             }
         });
 
