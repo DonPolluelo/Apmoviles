@@ -43,13 +43,13 @@ public class MiSemestreActivity extends AppCompatActivity {
         listaSemestres = dbSemestre.consultarListaSemestre();
         ArrayList<String> nombresSemestres = new ArrayList<>();
 
-        for (int i =0;i<listaSemestres.size();i++){
+        for (int i = 0; i < listaSemestres.size(); i++) {
             nombresSemestres.add(listaSemestres.get(i).getNombre());
         }
 
-        listViewSemestre= (ListView) findViewById(R.id.listaS);
+        listViewSemestre = (ListView) findViewById(R.id.listaS);
 
-        ArrayAdapter adaptador = new ArrayAdapter(this,R.layout.list_item,nombresSemestres);
+        ArrayAdapter adaptador = new ArrayAdapter(this, R.layout.list_item, nombresSemestres);
         listViewSemestre.setAdapter(adaptador);
 
         SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
@@ -73,7 +73,7 @@ public class MiSemestreActivity extends AppCompatActivity {
                 final String c = prefs.getString("semestre", "");
                 final int i = prefs.getInt("id", 0);
 
-                Intent intent=new Intent(MiSemestreActivity.this,MainActivity.class);
+                Intent intent = new Intent(MiSemestreActivity.this, MainActivity.class);
 
                 startActivity(intent);
 

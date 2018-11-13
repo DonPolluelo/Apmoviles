@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">UniUP!</string>
-    <string name="universidad_name">Edit My University</string>
-    <string name="carrera_name">Edit My Career</string>
-    <string name="horario_name">Edit My Schedule</string>
-    <string name="semestre_name">Edit My Semester</string>
+    <string name="universidad_name">Edit University</string>
+    <string name="carrera_name">Edit Career</string>
+    <string name="horario_name">Edit Schedule</string>
+    <string name="semestre_name">Select Semester</string>
     <string name="proximo">Coming Soon!</string>
     <string name="horario">Schedule</string>
     <string name="malla">Subjects</string>
@@ -13,6 +13,9 @@
     <string name="selecciona_carrera">Select your Career:</string>
     <string name="mensaje_proximamente">This University will be enable in a future updates!</string>
     <string name="mensaje_links">Useful Links from your University:</string>
+    <string name="mensaje_semestres">Cursed semesters:</string>
+    <string name="semestre_actual">Current semester:</string>
+    <string name="hint_agregar_semestre">Name to save. Example: Semester 2018-2</string>
     <string name="mensaje_seleccionaste">Selected</string>
     <string name="ingresa_nombre_del_ramo">Write down the subjects name:</string>
     <string name="nombre_ramo">Subjects Name</string>

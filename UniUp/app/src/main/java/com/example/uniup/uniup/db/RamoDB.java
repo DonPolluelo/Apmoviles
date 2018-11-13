@@ -41,6 +41,7 @@ public class RamoDB {
         return rowID;
     }
 
+
     public ArrayList consultarListaRamos(String id_carrera) {
 
         this.openReadableDB();
@@ -67,6 +68,8 @@ public class RamoDB {
 
         return listaRamos;
     }
+
+
 
     private ContentValues clienteMapperContentValues(Ramo ramo) {
         ContentValues cv = new ContentValues();

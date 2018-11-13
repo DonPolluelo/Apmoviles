@@ -59,6 +59,24 @@ public class SemestreDB {
         Log.i(TAG,"Ramo insertado en semestre");
         return rowID;
     }
+    public void eliminarRamo(long idSemestre,int idRamo) {
+       this.openWriteableDB();
+        if (db != null) {
+        /*ContentValues cv = new ContentValues();
+        cv.put(ConstantsDB.ID_SEMESTRE, idSemestre);
+        cv.put(ConstantsDB.ID_RAMO, idRamo);*/
+            db.delete("RAMOSDELSEMESTRE","ID_SEMESTRE='"+idSemestre+"'and ID_RAMO='"+idRamo+"'",null);
+       //    db.execSQL("DELETE FROM 'RAMOSDELSEMESTRE' WHERE 'ID_SEMESTRE=idSemestre?' and 'ID_RAMO=idRamo?'");
+        }
+
+       // db.delete("RamosDelSemestre","ID_RAMO=idRamo",null);
+     //   long rowID = db.delete(ConstantsDB.TABLA_RAMOSDELSEMESTRE,null,cv);
+        this.closeDB();
+      //  Log.i(TAG,"Ramo eliminado en semestre");
+
+    }
+
+
     private ContentValues semestreMapperContentValues(Semestre semestre) {
         ContentValues cv = new ContentValues();
         cv.put(ConstantsDB.NOMBRE_SEMESTRE, semestre.getNombre());

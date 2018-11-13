@@ -14,11 +14,11 @@
     <EditText
         android:id="@+id/nombre_semestre"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="84dp"
         android:layout_margin="20dp"
         android:layout_weight="1"
         android:background="@android:color/background_light"
-        android:hint="Nombre"
+        android:hint="@string/hint_agregar_semestre"
         android:padding="10dp"
         android:textColor="@android:color/background_dark" />
     <ListView

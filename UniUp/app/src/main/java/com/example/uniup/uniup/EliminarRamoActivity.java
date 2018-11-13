@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.uniup.uniup.adapters.SeleccionarRamosAdapter;
 import com.example.uniup.uniup.adapters.SemestreAdapter;
@@ -23,34 +26,36 @@ import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
 
-public class AgregarSemestreActivity extends AppCompatActivity {
+public class EliminarRamoActivity extends AppCompatActivity {
 
     private EditText nombre;
     private View view;
     private ArrayAdapter adapter;
     private ArrayList<Ramo> listaRamos;
+    private SemestreDB dbSemestre;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.agregar_semestre);
+        setContentView(R.layout.eliminar_ramo);
         //Toolbar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nombre = (EditText) findViewById(R.id.nombre_semestre);
 
-        ListView lv = (ListView) findViewById(R.id.agregar_semestre_listview);
+        ListView lv = (ListView) findViewById(R.id.eliminar_ramo_lv);
 
-        SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
-        final int id_career = prefs.getInt("id", 0);
+        SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
+        final String semestre = prefs.getString("semestre", "");
+        final int id_semestre = prefs.getInt("id", 0);
 
         //cargar datos
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        RamoDB db = new RamoDB(dbHelper);
-        listaRamos = db.consultarListaRamos(Integer.toString(id_career));
+        dbSemestre = new SemestreDB(dbHelper);
+        listaRamos=dbSemestre.consultarRamosPorSemestre(Integer.toString(id_semestre));
         final SeleccionarRamosAdapter adapter = new SeleccionarRamosAdapter(this,listaRamos);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -78,26 +83,20 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void agregarSemestre(View view){
+    public void eliminarRamo(View view){
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         SemestreDB db = new SemestreDB(dbHelper);
-        Semestre semestre = new Semestre(nombre.getText().toString());
-        int idSemestre = (int) db.insertarSemestre(semestre);
+        SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
+        final int idSemestre = prefs.getInt("id", 0);
         Ramo ramo;
-        for (int i = 0; i < listaRamos.size();i++){
+        for (int i = 0; i < listaRamos.size();i++) {
             ramo = listaRamos.get(i);
-            if(ramo.isCheck()){
-                db.insertarRamo(idSemestre,ramo.getId());
-                SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("semestre", nombre.getText().toString());
-                editor.putInt("id", idSemestre);
-                editor.apply();
-            }
+            if (ramo.isCheck()) {
+                db.eliminarRamo(idSemestre, ramo.getId());
+                }
         }
-
-
-        Intent intent = new Intent(AgregarSemestreActivity.this, MiSemestreActivity.class);
-        startActivity(intent);
+        Intent Inicio = new Intent(this, MainActivity.class);
+        Toast.makeText(this,"Asignaturas eliminadas",Toast.LENGTH_SHORT).show();
+        startActivity(Inicio);
     }
-}
+    }

@@ -22,12 +22,17 @@
         <activity android:name=".MainActivity" ></activity>
         <activity android:name=".MenuUniversidadesListViewActivity"></activity>
         <activity android:name=".ListaNotasActivity" ></activity>
-        <activity android:name=".AgregarRamoActivity"></activity>
         <activity android:name=".Carreras" ></activity>
-        <activity android:name=".AgregarSemestreActivity"></activity>
-        <activity android:name=".CarrerasPorSemestre" ></activity>
-        <activity android:name=".MiSemestreActivity" ></activity>
-
+        <activity android:name=".AgregarSemestreActivity">
+        </activity>
+        <activity android:name=".MiSemestreActivity" >
+        </activity>
+        <activity android:name=".CarrerasPorSemestre">
+        </activity>
+        <activity android:name=".ListaDesplegable"></activity>
+        <activity android:name=".EliminarRamoActivity"></activity>
+        <activity android:name=".AgregarRamoActivity"></activity>
+        <activity android:name=".AgregarNotaActivity"></activity>
     </application>
 
 </manifest>

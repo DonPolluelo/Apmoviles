@@ -10,13 +10,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center">
+
         <TextView
+            android:id="@+id/nombreS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mi Semestre"
-            android:textSize="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:id="@+id/nombreS"/>
+            android:text="@string/semestre_actual"
+            android:textAlignment="center"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="34sp" />
 
 
 
@@ -27,20 +31,50 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/boton_ramo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <com.github.clans.fab.FloatingActionMenu
+        app:menu_backgroundColor="@android:color/transparent"
+        android:id="@+id/menu_flotante"
+        app:backgroundTint="#E91E63"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu_fab_label="Menu"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="15sp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
-        android:src="@drawable/fab_add"
-        app:borderWidth="2dp" />
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/boton_semestre"
+            app:fab_size="mini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_submenu"
+            app:fab_label="Nuevo Semestre" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/boton_agregar_ramo"
+            app:fab_size="mini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_submenu"
+            app:fab_label="Agregar Ramo" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/boton_ramo"
+            app:fab_size="mini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_submenu2"
+            app:fab_label="Eliminar Ramo" />
 
 
+    </com.github.clans.fab.FloatingActionMenu>
+</RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

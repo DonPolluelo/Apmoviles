@@ -1,5 +1,6 @@
 package com.example.uniup.uniup;
 
+        import android.content.Context;
         import android.content.Intent;
         import android.content.SharedPreferences;
         import android.os.Bundle;
@@ -12,7 +13,9 @@ package com.example.uniup.uniup;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.AdapterView;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import com.example.uniup.uniup.adapters.SemestreAdapter;
         import com.example.uniup.uniup.db.DataBaseHelper;
@@ -20,12 +23,13 @@ package com.example.uniup.uniup;
         import com.example.uniup.uniup.db.SemestreDB;
         import com.example.uniup.uniup.models.Ramo;
         import com.example.uniup.uniup.models.Semestre;
+        import com.github.clans.fab.FloatingActionMenu;
 
         import java.util.ArrayList;
 
         import static android.content.Context.MODE_PRIVATE;
 
-public class SemestreFragment extends Fragment {
+public class SemestreFragment extends Fragment implements AdapterView.OnItemClickListener{
 
     private static final String TAG = "SemestreFragment";
     private RamoDB dbRamo;
@@ -39,6 +43,9 @@ public class SemestreFragment extends Fragment {
     }
 
     View view;
+
+    FloatingActionMenu actionMenu;
+    FloatingActionButton button1,button2;
 
     @Nullable
     @Override
@@ -55,15 +62,41 @@ public class SemestreFragment extends Fragment {
         TextView textView = (TextView) view.findViewById(R.id.nombreS);
         textView.setText(semestre);
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.boton_ramo);
+        FloatingActionMenu actionMenu = (FloatingActionMenu) view.findViewById(R.id.menu_flotante);
+        com.github.clans.fab.FloatingActionButton button1 = (com.github.clans.fab.FloatingActionButton)
+                view.findViewById(R.id.boton_semestre);
+        com.github.clans.fab.FloatingActionButton button2 = (com.github.clans.fab.FloatingActionButton)
+                view.findViewById(R.id.boton_ramo);
+        com.github.clans.fab.FloatingActionButton button3 = (com.github.clans.fab.FloatingActionButton)
+                view.findViewById(R.id.boton_agregar_ramo);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
+            //    Toast.makeText(getActivity(),"Agregar Semestre",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(),AgregarSemestreActivity.class);
                 startActivity(i);
             }
         });
+       button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+               // Toast.makeText(getActivity(),"Eliminar Ramo",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(),EliminarRamoActivity.class);
+                startActivity(i);
+
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+            //    Toast.makeText(getActivity(),"Agregar Ramo",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(),AgregarRamoActivity.class);
+                startActivity(i);
+
+            }
+        });
+
 
         //Lista Ramos
 
@@ -78,10 +111,20 @@ public class SemestreFragment extends Fragment {
         }
         recycler = (RecyclerView) view.findViewById(R.id.recycler_semestre);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-
         adapter = new SemestreAdapter(infoRamos);
         recycler.setAdapter(adapter);
-
         return view;
     }
+
+    @Override
+    public void onItemClick(AdapterView parent, View view, int pos, long id) {
+            Intent Inicio = new Intent(getActivity(), MainActivity.class);
+            SharedPreferences prefs = getActivity().getSharedPreferences("ramo", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("ramo", pos + 1);
+            editor.apply();
+        startActivity(Inicio);
+
+    }
+
 }

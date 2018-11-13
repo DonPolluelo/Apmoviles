@@ -87,7 +87,6 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
         listViewSemestres.setAdapter(adaptador);
         listViewSemestres.setOnItemClickListener(this);
 
-
         return view;
     }
 
@@ -103,14 +102,6 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
         Intent intent = new Intent(getActivity(),CarrerasPorSemestre.class);
         startActivity(intent);
     }
-
-
-
-
-
-
-
-
 
 }
 

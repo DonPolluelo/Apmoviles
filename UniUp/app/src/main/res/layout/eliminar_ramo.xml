@@ -13,19 +13,19 @@
 
 
     <ListView
-        android:id="@+id/agregar_ramo_lv"
+        android:id="@+id/eliminar_ramo_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="20"
         android:padding="10dp"/>
     <Button
-        android:id="@+id/agregar_ramo"
+        android:id="@+id/eliminar_ramo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="#E91E63"
-        android:text="Agregar"
-        android:onClick="agregarRamo"
+        android:text="Eliminar"
+        android:onClick="eliminarRamo"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:layout_weight="1"/>

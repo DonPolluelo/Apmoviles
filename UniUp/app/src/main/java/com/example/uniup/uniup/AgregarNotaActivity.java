@@ -12,40 +12,39 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.uniup.uniup.adapters.SeleccionarRamosAdapter;
-import com.example.uniup.uniup.adapters.SemestreAdapter;
 import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.db.SemestreDB;
 import com.example.uniup.uniup.models.Ramo;
-import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
 
-public class AgregarSemestreActivity extends AppCompatActivity {
+public class AgregarNotaActivity extends AppCompatActivity {
 
     private EditText nombre;
     private View view;
     private ArrayAdapter adapter;
     private ArrayList<Ramo> listaRamos;
+    private SemestreDB dbSemestre;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.agregar_semestre);
+        setContentView(R.layout.agregar_ramo);
         //Toolbar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nombre = (EditText) findViewById(R.id.nombre_semestre);
-
-        ListView lv = (ListView) findViewById(R.id.agregar_semestre_listview);
-
         SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
         final int id_career = prefs.getInt("id", 0);
+
+        ListView lv = (ListView) findViewById(R.id.agregar_ramo_lv);
 
         //cargar datos
         DataBaseHelper dbHelper = new DataBaseHelper(this);
@@ -57,7 +56,6 @@ public class AgregarSemestreActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Ramo ramo = listaRamos.get(position);
-
                 if (ramo.isCheck()){
                     ramo.setCheck(false);
                 } else {
@@ -78,26 +76,20 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void agregarSemestre(View view){
+    public void agregarNota(View view){
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         SemestreDB db = new SemestreDB(dbHelper);
-        Semestre semestre = new Semestre(nombre.getText().toString());
-        int idSemestre = (int) db.insertarSemestre(semestre);
+        SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
+        final int idSemestre = prefs.getInt("id", 0);
         Ramo ramo;
-        for (int i = 0; i < listaRamos.size();i++){
+        for (int i = 0; i < listaRamos.size();i++) {
             ramo = listaRamos.get(i);
-            if(ramo.isCheck()){
-                db.insertarRamo(idSemestre,ramo.getId());
-                SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("semestre", nombre.getText().toString());
-                editor.putInt("id", idSemestre);
-                editor.apply();
-            }
+            if (ramo.isCheck()) {
+                db.insertarRamo(idSemestre, ramo.getId());
+                }
         }
-
-
-        Intent intent = new Intent(AgregarSemestreActivity.this, MiSemestreActivity.class);
-        startActivity(intent);
+        Intent Inicio = new Intent(this, MainActivity.class);
+        Toast.makeText(this,"Ramos Agregados",Toast.LENGTH_SHORT).show();
+        startActivity(Inicio);
     }
-}
+    }

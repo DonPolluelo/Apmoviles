@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">UniUP!</string>
-    <string name="universidad_name">Editar Mi Universidad</string>
-    <string name="carrera_name">Editar Mi Carrera</string>
+    <string name="universidad_name">Editar Universidad</string>
+    <string name="carrera_name">Editar Carrera</string>
     <string name="horario_name">Editar Mi Horario</string>
-    <string name="semestre_name">Editar Mi Semestre</string>
+    <string name="semestre_name">Elegir Semestre</string>
     <string name="proximo">Próximamente!</string>
     <string name="horario">Horario</string>
     <string name="malla">Malla</string>
@@ -11,7 +11,9 @@
     <string name="selecciona">Selecciona tu Universidad:</string>
     <string name="selecciona_carrera">Selecciona tu Carrera:</string>
     <string name="mensaje_proximamente">Esta Universidad estará disponible en futuras actualizaciones!</string>
-    <string name="mensaje_links">Links de utilidad de tu Universidad:</string>
+    <string name="mensaje_semestres">Semestres cursados:</string>
+    <string name="semestre_actual">Semestre actual:</string>
+    <string name="hint_agregar_semestre">Nombre a guardar. Ejemplo: Semestre 2018-2 </string>
     <string name="mensaje_seleccionaste">Seleccionaste</string>
     <string name="ingresa_nombre_del_ramo">Ingresa el Nombre del Ramo:</string>
     <string name="nombre_ramo">Nombre del Ramo</string>

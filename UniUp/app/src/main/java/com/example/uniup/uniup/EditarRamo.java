@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.uniup.uniup.adapters.SeleccionarRamosAdapter;
-import com.example.uniup.uniup.adapters.SemestreAdapter;
 import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.db.SemestreDB;
@@ -23,7 +22,7 @@ import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
 
-public class AgregarSemestreActivity extends AppCompatActivity {
+public class EditarRamo extends AppCompatActivity {
 
     private EditText nombre;
     private View view;
@@ -88,6 +87,7 @@ public class AgregarSemestreActivity extends AppCompatActivity {
             ramo = listaRamos.get(i);
             if(ramo.isCheck()){
                 db.insertarRamo(idSemestre,ramo.getId());
+
                 SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("semestre", nombre.getText().toString());
@@ -97,7 +97,7 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         }
 
 
-        Intent intent = new Intent(AgregarSemestreActivity.this, MiSemestreActivity.class);
+        Intent intent = new Intent(EditarRamo.this, MiSemestreActivity.class);
         startActivity(intent);
     }
 }
