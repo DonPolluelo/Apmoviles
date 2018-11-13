@@ -42,19 +42,10 @@
         app:backgroundTint="#E91E63"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:menu_fab_label="Menu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         >
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/boton_semestre"
-            app:fab_size="mini"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#E91E63"
-            android:src="@drawable/ic_submenu"
-            app:fab_label="Nuevo Semestre" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/boton_agregar_ramo"
@@ -66,6 +57,15 @@
             app:fab_label="Agregar Ramo" />
 
         <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/boton_semestre"
+            app:fab_size="mini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_submenu"
+            app:fab_label="Agregar Semestre" />
+
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/boton_ramo"
             app:fab_size="mini"
             android:layout_width="match_parent"
@@ -74,6 +74,14 @@
             android:src="@drawable/ic_submenu2"
             app:fab_label="Eliminar Ramo" />
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/eliminar_semestre"
+            app:fab_size="mini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_submenu2"
+            app:fab_label="Eliminar Semestre" />
 
     </com.github.clans.fab.FloatingActionMenu>
 </RelativeLayout>

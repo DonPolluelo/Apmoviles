@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.uniup.uniup.adapters.SeleccionarRamosAdapter;
 import com.example.uniup.uniup.adapters.SemestreAdapter;
@@ -29,6 +30,7 @@ public class AgregarSemestreActivity extends AppCompatActivity {
     private View view;
     private ArrayAdapter adapter;
     private ArrayList<Ramo> listaRamos;
+    private ArrayList<String> listaSemestres = new ArrayList<String>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +53,8 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         RamoDB db = new RamoDB(dbHelper);
         listaRamos = db.consultarListaRamos(Integer.toString(id_career));
+
+
         final SeleccionarRamosAdapter adapter = new SeleccionarRamosAdapter(this,listaRamos);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -82,22 +86,38 @@ public class AgregarSemestreActivity extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         SemestreDB db = new SemestreDB(dbHelper);
         Semestre semestre = new Semestre(nombre.getText().toString());
-        int idSemestre = (int) db.insertarSemestre(semestre);
-        Ramo ramo;
-        for (int i = 0; i < listaRamos.size();i++){
-            ramo = listaRamos.get(i);
-            if(ramo.isCheck()){
-                db.insertarRamo(idSemestre,ramo.getId());
-                SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("semestre", nombre.getText().toString());
-                editor.putInt("id", idSemestre);
-                editor.apply();
-            }
+
+        ArrayList<Semestre> listaSemestres=db.consultarListaSemestre();
+        ArrayList<String> infoSemestre = new ArrayList<>();
+
+        for  (int i = 0; i<listaSemestres.size();i++) {
+            infoSemestre.add(listaSemestres.get(i).getNombre());
         }
 
+        if (nombre.getText().toString().isEmpty()){
+            Toast.makeText(this, "Error! Debes asignarle un nombre al semestre", Toast.LENGTH_SHORT).show();
+        }else {
 
-        Intent intent = new Intent(AgregarSemestreActivity.this, MiSemestreActivity.class);
-        startActivity(intent);
+            if (infoSemestre.contains(nombre.getText().toString())) {
+                Toast.makeText(this, "Este nombre ya existe! Por favor asigna otro", Toast.LENGTH_SHORT).show();
+            } else {
+                int idSemestre = (int) db.insertarSemestre(semestre);
+                Ramo ramo;
+                for (int i = 0; i < listaRamos.size(); i++) {
+                    ramo = listaRamos.get(i);
+                    if (ramo.isCheck()) {
+                        db.insertarRamo(idSemestre, ramo.getId());
+                        SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("semestre", nombre.getText().toString());
+                        editor.putInt("id", idSemestre);
+                        editor.apply();
+                    }
+                }
+                Intent intent = new Intent(AgregarSemestreActivity.this, MiSemestreActivity.class);
+                startActivity(intent);
+            }
+
+        }
     }
 }

@@ -56,6 +56,7 @@ public class EliminarRamoActivity extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         dbSemestre = new SemestreDB(dbHelper);
         listaRamos=dbSemestre.consultarRamosPorSemestre(Integer.toString(id_semestre));
+
         final SeleccionarRamosAdapter adapter = new SeleccionarRamosAdapter(this,listaRamos);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,14 +90,31 @@ public class EliminarRamoActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
         final int idSemestre = prefs.getInt("id", 0);
         Ramo ramo;
-        for (int i = 0; i < listaRamos.size();i++) {
-            ramo = listaRamos.get(i);
-            if (ramo.isCheck()) {
-                db.eliminarRamo(idSemestre, ramo.getId());
+        ArrayList<Integer> listaRamosEliminados = new ArrayList<Integer>();
+        if (listaRamos.size()==0) {
+            Toast.makeText(this, "No hay asignaturas para eliminar", Toast.LENGTH_SHORT).show();}
+            else {
+                for (int i = 0; i < listaRamos.size(); i++) {
+                    ramo = listaRamos.get(i);
+                    if (ramo.isCheck()) {
+                        listaRamosEliminados.add(ramo.getId());
+                        db.eliminarRamo(idSemestre, ramo.getId());
+                    }
+                }
+
+                if (listaRamosEliminados.size() == 0) {
+                    Toast.makeText(this, "No se eliminaron asignaturas", Toast.LENGTH_SHORT).show();
+                }
+                if (listaRamosEliminados.size() == 1) {
+                    Toast.makeText(this, "1 Asignatura Eliminada", Toast.LENGTH_SHORT).show();
+                }
+                if (listaRamosEliminados.size() > 1) {
+                    Toast.makeText(this, listaRamosEliminados.size() + " Asignaturas Eliminadas", Toast.LENGTH_SHORT).show();
                 }
         }
+
+
         Intent Inicio = new Intent(this, MainActivity.class);
-        Toast.makeText(this,"Asignaturas eliminadas",Toast.LENGTH_SHORT).show();
         startActivity(Inicio);
     }
     }

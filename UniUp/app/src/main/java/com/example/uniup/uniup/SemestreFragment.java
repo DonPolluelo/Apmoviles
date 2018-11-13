@@ -69,6 +69,8 @@ public class SemestreFragment extends Fragment implements AdapterView.OnItemClic
                 view.findViewById(R.id.boton_ramo);
         com.github.clans.fab.FloatingActionButton button3 = (com.github.clans.fab.FloatingActionButton)
                 view.findViewById(R.id.boton_agregar_ramo);
+        com.github.clans.fab.FloatingActionButton button4 = (com.github.clans.fab.FloatingActionButton)
+                view.findViewById(R.id.eliminar_semestre);
 
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -96,6 +98,13 @@ public class SemestreFragment extends Fragment implements AdapterView.OnItemClic
 
             }
         });
+        button4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                    Toast.makeText(getActivity(),"Próximamente",Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 
         //Lista Ramos
@@ -114,16 +123,18 @@ public class SemestreFragment extends Fragment implements AdapterView.OnItemClic
         adapter = new SemestreAdapter(infoRamos);
         recycler.setAdapter(adapter);
         return view;
+
+
     }
 
     @Override
     public void onItemClick(AdapterView parent, View view, int pos, long id) {
-            Intent Inicio = new Intent(getActivity(), MainActivity.class);
             SharedPreferences prefs = getActivity().getSharedPreferences("ramo", MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putInt("ramo", pos + 1);
             editor.apply();
-        startActivity(Inicio);
+            Intent Inicio = new Intent(getActivity(), MainActivity.class);
+            startActivity(Inicio);
 
     }
 

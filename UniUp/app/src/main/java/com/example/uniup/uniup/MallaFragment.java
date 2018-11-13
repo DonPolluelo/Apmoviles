@@ -42,6 +42,7 @@ public class MallaFragment extends Fragment implements AdapterView.OnItemClickLi
 
 
 
+
     public MallaFragment() {
 
     }

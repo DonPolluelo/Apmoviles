@@ -49,6 +49,7 @@ public class LinksFragment extends Fragment implements AdapterView.OnItemClickLi
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
 
+
         return view;
     }
 

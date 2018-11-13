@@ -8,12 +8,16 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Date;
+
 public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     String[] nombresGrupos= {"Lunes","Martes","Miércoles","Jueves","Viernes"};
-    String[][] nombresHijos = {{"ramo1","ramo2"},{"ramo3","ramo4"},{"ramo5","ramo6"},{"ramo7","ramo8"},{"ramo9","ramo10"}};
+    String[][] nombresHijos = {{"9-10 Matemáticas 3","11-12 Ayudantía Matemáticas 3"},{"3-4 Física General 3","7-8 Natación","9-10 Aplicaciones Móviles"},{"5-6 Inglés"},{"3-4 Física General 3","9-10 Matemáticas 3","13-14 Estructura de Datos"},{"1-2 Estructura de Datos","3-4 Economía","5-6 Matemáticas 3"}};
+
 
     Context context;
+
 
     public ExpandableListViewAdapter(Context context){
 
@@ -61,9 +65,9 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
         TextView txtView = new TextView(context);
         txtView.setText(nombresGrupos[groupPosition]);
-        txtView.setPadding(100,0,0,0);
-        txtView.setTextSize(30);
-        txtView.setTextColor(Color.BLUE);
+        txtView.setPadding(80,50,0,50);
+        txtView.setTextSize(24);
+        txtView.setTextColor(Color.BLACK);
         return txtView;
     }
 
@@ -72,9 +76,8 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
         final TextView txtView = new TextView(context);
         txtView.setText(nombresHijos[groupPosition][childPosition]);
-        txtView.setPadding(100,0,0,0);
-        txtView.setTextSize(24);
-        txtView.setTextColor(Color.RED);
+        txtView.setPadding(80,50,0,50);
+        txtView.setTextSize(22);
 
         txtView.setOnClickListener(new View.OnClickListener() {
             @Override

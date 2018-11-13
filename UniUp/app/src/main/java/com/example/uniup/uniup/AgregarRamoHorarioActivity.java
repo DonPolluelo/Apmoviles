@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,41 +17,47 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.uniup.uniup.adapters.SeleccionarRamosAdapter;
+import com.example.uniup.uniup.adapters.SemestreAdapter;
 import com.example.uniup.uniup.db.DataBaseHelper;
 import com.example.uniup.uniup.db.RamoDB;
 import com.example.uniup.uniup.db.SemestreDB;
 import com.example.uniup.uniup.models.Ramo;
+import com.example.uniup.uniup.models.Semestre;
 
 import java.util.ArrayList;
 
-public class AgregarRamoActivity extends AppCompatActivity {
+public class AgregarRamoHorarioActivity extends AppCompatActivity {
 
     private EditText nombre;
     private View view;
-    private ArrayAdapter adapter;
     private ArrayList<Ramo> listaRamos;
+    private ArrayList<String> listaHorarios;
     private SemestreDB dbSemestre;
+    RecyclerView recycler;
+    SemestreAdapter adapter;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.agregar_ramo);
+        setContentView(R.layout.agregar_horario_ramo);
         //Toolbar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        SharedPreferences prefs = getSharedPreferences("carrera", MODE_PRIVATE);
-        final int id_career = prefs.getInt("id", 0);
+        SharedPreferences prefs = this.getSharedPreferences("semestre", MODE_PRIVATE);
+        final String semestre = prefs.getString("semestre", "");
+        final int id_semestre = prefs.getInt("id", 0);
 
-        ListView lv = (ListView) findViewById(R.id.agregar_ramo_lv);
+        ListView lv = (ListView) findViewById(R.id.agregar_ramo_horario_lv);
 
-        //cargar datos
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        RamoDB db = new RamoDB(dbHelper);
-        listaRamos = db.consultarListaRamos(Integer.toString(id_career));
+        SemestreDB db = new SemestreDB(dbHelper);
+       listaRamos = db.consultarRamosPorSemestre(Integer.toString(id_semestre));
+        //listaRamos = db.consultarHorarios();
+
         final SeleccionarRamosAdapter adapter = new SeleccionarRamosAdapter(this,listaRamos);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,6 +74,7 @@ public class AgregarRamoActivity extends AppCompatActivity {
                 adapter.updateRecords(listaRamos);
             }
         });
+
     }
 
     @Override
@@ -76,7 +85,7 @@ public class AgregarRamoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void agregarRamo(View view){
+  /*  public void agregarRamo(View view){
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         SemestreDB db = new SemestreDB(dbHelper);
         SharedPreferences prefs = getSharedPreferences("semestre", MODE_PRIVATE);
@@ -104,5 +113,5 @@ public class AgregarRamoActivity extends AppCompatActivity {
         }
         Intent Inicio = new Intent(this, MainActivity.class);
         startActivity(Inicio);
-    }
+    }*/
     }

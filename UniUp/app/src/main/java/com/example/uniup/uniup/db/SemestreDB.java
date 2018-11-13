@@ -128,4 +128,26 @@ public class SemestreDB {
 
         return listaRamos;
     }
+
+    public ArrayList consultarHorarios() {
+        this.openReadableDB();
+
+        Semestre semestre;
+        ArrayList<Semestre> listaSemestres = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.TABLA_SEMANA,null);
+
+        while (cursor.moveToNext()){
+            semestre = new Semestre();
+            semestre.setId(cursor.getInt(0));
+            semestre.setNombre(cursor.getString(1));
+
+            listaSemestres.add(semestre);
+            Log.i(TAG,"Semestre recuperado");
+        }
+        this.closeDB();
+
+        return listaSemestres;
+    }
+
 }

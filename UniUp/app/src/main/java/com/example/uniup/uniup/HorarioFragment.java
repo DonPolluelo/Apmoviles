@@ -9,12 +9,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 
 
 public class HorarioFragment extends Fragment {
 
-   public HorarioFragment() {
+    ExpandableListView listaexpandible;
+
+
+    public HorarioFragment() {
     }
 
     View view;
@@ -30,15 +35,19 @@ public class HorarioFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),ListaDesplegable.class);
+                Intent i = new Intent(getActivity(),AgregarRamoHorarioActivity.class);
                 startActivity(i);
             }
         });
 
+        listaexpandible = (ExpandableListView) view.findViewById(R.id.expandable);
+
+        ExpandableListViewAdapter adaptador = new ExpandableListViewAdapter(getActivity().getApplicationContext());
+
+        listaexpandible.setAdapter(adaptador);
 
 
         return view;
-
 
     }
     }

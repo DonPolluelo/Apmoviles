@@ -33,6 +33,7 @@
         <activity android:name=".EliminarRamoActivity"></activity>
         <activity android:name=".AgregarRamoActivity"></activity>
         <activity android:name=".AgregarNotaActivity"></activity>
+        <activity android:name=".AgregarRamoHorarioActivity"></activity>
     </application>
 
 </manifest>
